@@ -15,18 +15,22 @@ products.set("intellij", {
   productTitle: "IntelliJ IDEA",
   productFullyQualifiedTitle: "IntelliJ IDEA Ultimate",
   productDocCode: "idea",
+  externalDocsIndexing: "https://www.jetbrains.com/help/idea/indexing.html",
 });
 products.set("goland", {
   productTitle: "GoLand",
   productDocCode: "go",
+  externalDocsIndexing: "https://www.jetbrains.com/help/go/indexing.html",
 });
 products.set("phpstorm", {
   productTitle: "PhpStorm",
   productDocCode: "phpstorm",
+  externalDocsIndexing: "https://www.jetbrains.com/help/phpstorm/indexing.html",
 });
 products.set("pycharm", {
   productTitle: "PyCharm",
   productDocCode: "pycharm",
+  externalDocsIndexing: "https://www.jetbrains.com/help/pycharm/indexing.html",
 });
 
 const keys = new Set();

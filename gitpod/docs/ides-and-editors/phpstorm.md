@@ -125,7 +125,7 @@ When you open the project {title} starts indexing to load modules and
 enable the core functionality like code completion and navigation.
 Depending on the size of your project indexing speed can vary significantly.
 
-You can speed up the indexing of a project by applying these [general recommendations](https://www.jetbrains.com/help/go/indexing.html).
+You can speed up the indexing of a project by applying these [general recommendations](https://www.jetbrains.com/help/phpstorm/indexing.html).
 Gitpod prebuilds allow you to improve it further by indexing before you start a new workspace.
 
 To leverage it:
