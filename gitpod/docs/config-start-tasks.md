@@ -171,7 +171,7 @@ tasks:
 
 Let's say you have a web app dev server that takes a moment to start up to listen on port 3000. Once it's up and running, you want to run end-to-end tests against `http://localhost:3000`.
 
-You can achieve this with two terminals and the `gp await-port` CLI command.
+You can achieve this with two terminals and the `gp ports await` CLI command.
 
 ```yaml
 tasks:
@@ -181,7 +181,7 @@ tasks:
 
   - name: e2e Tests
     command: |
-      gp await-port 3000
+      gp ports await 3000
       npm run test
 ```
 

@@ -18,9 +18,7 @@ Usage:
   gp [command]
 
 Available Commands:
-  await-port          Waits for a process to listen on a port
   env                 Controls user-defined, persistent environment variables.
-  forward-port        Makes a port available on 0.0.0.0 so that it can be exposed to the internet
   help                Help about any command
   init                Create a Gitpod configuration for this project.
   open                Opens a file in Gitpod
@@ -80,23 +78,6 @@ With `gp env API_ENDPOINT=https://api.example.com` you can set an `API_ENDPOINT`
 To delete or unset an environment variable, you use `gp env -u API_ENDPOINT`.
 
 Please refer to the help output provided by `gp env --help` for more use cases of the `gp env` command.
-
-## forward-port
-
-In Gitpod, services/servers running on a port need to be _exposed_ before they become accessible from the internet. This process only works with services listening on `0.0.0.0` and not just `localhost`.
-Sometimes it is not possible to make a server listen on `0.0.0.0`, e.g. because it is not your code and there are simply no means of configuration.
-
-In that case, `gp forward-port <port>` can be used to forward all traffic form a socket listing on all network interfaces to your process listening on localhost only.
-
-## await-port
-
-When writing tasks to be executed on workspace start, one sometimes wants to wait for an http service to be available. `gp await-port` does that.
-
-Here's an example that will open a certain path once a service is a available:
-
-```sh
-gp await-port 3000 && gp preview $(gp url 3000)/my/path/index.html
-```
 
 ## sync-await
 
@@ -179,3 +160,24 @@ gp ports list
 ### top
 
 Displays the used and available workspace CPU and memory.
+
+### expose
+
+In Gitpod, services/servers running on a port need to be _exposed_ before they become accessible from the internet. This process only works with services listening on `0.0.0.0` and not just `localhost`.
+Sometimes it is not possible to make a server listen on `0.0.0.0`, e.g. because it is not your code and there are simply no means of configuration.
+
+In that case, `gp ports expose <port>` can be used to forward all traffic form a socket listing on all network interfaces to your process listening on localhost only.
+
+```sh
+gp ports expose <port>
+```
+
+### await
+
+When writing tasks to be executed on workspace start, one sometimes wants to wait for an http service to be available. `gp ports await` does that.
+
+Here's an example that will open a certain path once a service is a available:
+
+```sh
+gp ports await 3000 && gp preview $(gp url 3000)/my/path/index.html
+```
