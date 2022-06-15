@@ -348,13 +348,13 @@ However, if the preview opens too soon, you might see an error like this:
 
 > Port 8080 didn't respond
 
-If you'd like a task to run only when a given port becomes active, you can use `gp await-port <port>` like so:
+If you'd like a task to run only when a given port becomes active, you can use `gp ports await <port>` like so:
 
 ```yml
 tasks:
   - init: npm install
     command: npm run server 3000
-  - command: gp await-port 3000 && gp preview $(gp url 3000)
+  - command: gp ports await 3000 && gp preview $(gp url 3000)
 ```
 
 <br>
